@@ -9,6 +9,7 @@ import {resolve} from './src/sanity/presentation/resolve'
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
 
 export default defineConfig({
   name: 'default',
@@ -21,6 +22,7 @@ export default defineConfig({
     presentationTool({
       resolve,
       previewUrl: {
+        initial: siteUrl,
         previewMode: {
           enable: '/api/draft-mode/enable',
         },
