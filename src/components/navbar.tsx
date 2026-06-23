@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import {BlogSearch} from '@/components/blog-search'
 
@@ -15,9 +16,14 @@ export function Navbar() {
     <header className="sticky top-0 z-40 border-b border-zinc-200 bg-white/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-4 px-6 lg:gap-6">
         <Link href="/" className="flex shrink-0 items-center gap-2 font-semibold text-zinc-900">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#f97316] text-sm font-bold text-white">
-            B
-          </span>
+          <Image
+            src="/bruno-logo.png"
+            alt="Bruno"
+            width={32}
+            height={32}
+            className="h-8 w-8"
+            priority
+          />
           <span className="hidden sm:inline">Bruno</span>
         </Link>
 
